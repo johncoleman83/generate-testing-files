@@ -12,6 +12,9 @@ M = 'main.py'
 # string to find a match to end writing a file
 END = 'guillaume@ubuntu:'
 
+# first line to write to your files
+firstline = '#!/usr/bin/python3\n'
+
 
 # main function
 def app():
@@ -40,6 +43,9 @@ def extractname(aline):
     return filename
 
 
+def extractfilename(aline):
+    return aline[6:-1]
+
 # parses list of lines from file and writes to new files one at a time
 def parsefile(intrapage_list):
     l = 0
@@ -55,7 +61,14 @@ def parsefile(intrapage_list):
                 l += 1
             fout.close()
             os.chmod(f, 500)
+        if 'File:' in line:
+            f = extractfilename(line)
+            fout = open(f, 'w')
+            fout.write(firstline)
+            fout.close()
+            os.chmod(f, 500)
         l += 1
+
 
 
 if __name__ == '__main__':
