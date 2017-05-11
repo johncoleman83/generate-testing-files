@@ -11,11 +11,13 @@
 
 * __clone__: clone this repo in the directory you will work in
 * __move files__: move files into testing directory and delete repo
+
 ```
 $ git clone https://github.com/johncoleman83/generate-testing-files.git
-$ mv generate-testing-files/generatemain.py && mv generate-testing-files/intrapage.txt .
+$ mv generate-testing-files/generatemain.py . && mv generate-testing-files/intrapage.txt .
 $ rm -rf generate-testing-files/
 ```
+
 * __manual parse__: manually copy and paste the entire contents from intranet
   page that contains the testing `main.` files that you need
 * __save file__: in my example, I save the file as: `intrapage.txt`
