@@ -14,7 +14,7 @@
 
 ```
 $ git clone https://github.com/johncoleman83/generate-testing-files.git
-$ mv generate-testing-files/generatemain.py .
+$ mv generate-testing-files/generatemain.py . && touch intrapage.txt
 $ rm -rf generate-testing-files/
 ```
 
@@ -24,7 +24,6 @@ $ rm -rf generate-testing-files/
   file. In my example, I save the file as: `intrapage.txt`
 
 ```
-$ touch intrapage.txt
 $ emacs intrapage.txt
 ```
 
