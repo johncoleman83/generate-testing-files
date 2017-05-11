@@ -19,9 +19,8 @@
 ## Usage
 
 ```
-$ python app.py
+$ ./generatemain.py
 ```
-## References
 
 ## Author
 
