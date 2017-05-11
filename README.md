@@ -14,7 +14,7 @@
 
 ```
 $ git clone https://github.com/johncoleman83/generate-testing-files.git
-$ mv generate-testing-files/generatemain.py . && touch intrapage.txt
+$ mv generate-testing-files/generate.py . && touch intrapage.txt
 $ rm -rf generate-testing-files/
 ```
 
@@ -36,7 +36,7 @@ $ emacs intrapage.txt
 ## Usage
 
 ```
-$ ./generatemain.py
+$ ./generate.py
 ```
 
 ## Author

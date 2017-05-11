@@ -43,8 +43,13 @@ def extractname(aline):
     return filename
 
 
-def extractfilename(aline):
-    return aline[6:-1]
+def writeyourfile(aline):
+    f = aline[6:-1]
+    fout = open(f, 'w')
+    fout.write(firstline)
+    fout.close()
+    os.chmod(f, 500)
+
 
 # parses list of lines from file and writes to new files one at a time
 def parsefile(intrapage_list):
@@ -61,12 +66,8 @@ def parsefile(intrapage_list):
                 l += 1
             fout.close()
             os.chmod(f, 500)
-        if 'File:' in line:
-            f = extractfilename(line)
-            fout = open(f, 'w')
-            fout.write(firstline)
-            fout.close()
-            os.chmod(f, 500)
+        elif 'File:' in line:
+            writeyourfile(line)
         l += 1
 
 
