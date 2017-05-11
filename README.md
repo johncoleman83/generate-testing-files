@@ -14,13 +14,20 @@
 
 ```
 $ git clone https://github.com/johncoleman83/generate-testing-files.git
-$ mv generate-testing-files/generatemain.py . && mv generate-testing-files/intrapage.txt .
+$ mv generate-testing-files/generatemain.py .
 $ rm -rf generate-testing-files/
 ```
 
 * __manual parse__: manually copy and paste the entire contents from intranet
   page that contains the testing `main.` files that you need
-* __save file__: in my example, I save the file as: `intrapage.txt`
+* __save file__: create file, paste content from Holberton Intranet into the
+  file. In my example, I save the file as: `intrapage.txt`
+
+```
+$ touch intrapage.txt
+$ emacs intrapage.txt
+```
+
 * __read the code__: ensure that your configureations in `generatemain.py` are
   correct.  If you followed the above instructions correctly, you should not
   have to do anything for this step, except understand the code.  You may need
