@@ -9,12 +9,21 @@
 
 ## Configuration
 
-* __manual parse__: first copy and paste the page that contains all
-  the example test files
+* __clone__: clone this repo in the directory you will work in
+* __move files__: move files into testing directory and delete repo
+```
+$ git clone https://github.com/johncoleman83/generate-testing-files.git
+$ mv generate-testing-files/generatemain.py && mv generate-testing-files/intrapage.txt .
+$ rm -rf generate-testing-files/
+```
+* __manual parse__: manually copy and paste the entire contents from intranet
+  page that contains the testing `main.` files that you need
 * __save file__: in my example, I save the file as: `intrapage.txt`
 * __read the code__: ensure that your configureations in `generatemain.py` are
   correct.  If you followed the above instructions correctly, you should not
-  have to do anything for this step, except understand the code
+  have to do anything for this step, except understand the code.  You may need
+  to change the string `END` depending on what user generated the testing files
+  in the intranet example
 
 ## Usage
 
