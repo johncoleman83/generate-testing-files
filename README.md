@@ -27,7 +27,7 @@ $ rm -rf generate-testing-files/
 $ emacs intrapage.txt
 ```
 
-* __read the code__: ensure that your configureations in `generatemain.py` are
+* __read the code__: ensure that your configureations in `generate.py` are
   correct.  If you followed the above instructions correctly, you should not
   have to do anything for this step, except understand the code.  You may need
   to change the string `END` depending on what user generated the testing files
