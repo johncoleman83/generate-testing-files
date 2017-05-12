@@ -56,7 +56,7 @@ def parsefile(intrapage_list):
     l = 0
     while l < len(intrapage_list):
         line = intrapage_list[l]
-        if 'cat ' and M in line:
+        if ('cat ' and M in line) and './' not in line:
             f = extractname(line)
             fout = open(f, 'w')
             l += 1
