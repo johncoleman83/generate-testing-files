@@ -1,6 +1,7 @@
 # generate testing files
 
-:a python application, to generate testing files for Holberton School
+:a python application, to generate testing `main.` files & your code files with
+templates for Holberton School projects
 
 ### python
 
