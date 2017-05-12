@@ -7,6 +7,7 @@ import os
 intrapage = 'intrapage.txt'
 
 # string to find a match to begin writing file and file extension
+C = 'guillaume@ubuntu:~/0x05$ cat'
 M = 'main.py'
 
 # string to find a match to end writing a file
@@ -43,10 +44,12 @@ def extractname(aline):
     return filename
 
 
-def writeyourfile(aline):
-    f = aline[6:-1]
+def writeyourfile(line, prototype):
+    global firstline
+    f = line[6:-1]
     fout = open(f, 'w')
-    fout.write(firstline)
+    writeline = firstline + prototype
+    fout.write(writeline)
     fout.close()
     os.chmod(f, 500)
 
@@ -56,7 +59,9 @@ def parsefile(intrapage_list):
     l = 0
     while l < len(intrapage_list):
         line = intrapage_list[l]
-        if ('cat ' and M in line) and './' not in line:
+        if 'Prototype:' in line:
+            prototype = line[11:]
+        if C in line and M in line:
             f = extractname(line)
             fout = open(f, 'w')
             l += 1
@@ -67,7 +72,7 @@ def parsefile(intrapage_list):
             fout.close()
             os.chmod(f, 500)
         elif 'File:' in line:
-            writeyourfile(line)
+            writeyourfile(line, prototype)
         l += 1
 
 
