@@ -46,12 +46,28 @@ def extractname(aline):
 
 def writeyourfile(line, prototype):
     global firstline
-    f = line[6:-1]
-    fout = open(f, 'w')
+    s1 = e1 = s2 = 0
+    for i in range(len(line)):
+        if line[i] == ':':
+            s1 = i + 2
+        if line[i] == ',':
+            e1 = i
+            s2 = i + 2
+            break
+        if line[i] == '\n':
+            e1 = i
+    f1 = line[s1:e1]
+    fout = open(f1, 'w')
     writeline = firstline + prototype
     fout.write(writeline)
     fout.close()
-    os.chmod(f, 500)
+    os.chmod(f1, 500)
+    if s2:
+        f2 = line[s2:-1]
+        fout = open(f2, 'w')
+        writeline = '\n'
+        fout.write(writeline)
+        fout.close()
 
 
 # parses list of lines from file and writes to new files one at a time
