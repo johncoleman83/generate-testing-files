@@ -7,7 +7,7 @@ import os
 intrapage = 'intrapage.txt'
 
 # string to find a match to begin writing file and file extension
-C = 'guillaume@ubuntu:~/0x05$ cat'
+C = 'guillaume@ubuntu:~/0x07$ cat'
 M = 'main.py'
 
 # string to find a match to end writing a file
@@ -77,6 +77,8 @@ def parsefile(intrapage_list):
         line = intrapage_list[l]
         if 'Prototype:' in line:
             prototype = line[11:]
+        else:
+            prototype = ''
         if C in line and M in line:
             f = extractname(line)
             fout = open(f, 'w')
