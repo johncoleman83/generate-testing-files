@@ -7,11 +7,13 @@ import os
 intrapage = 'intrapage.txt'
 
 # string to find a match to begin writing file and file extension
-C = 'guillaume@ubuntu:~/0x07$ cat'
+
+ALPHA = 'guillaume@ubuntu:~/'
+
+# ALPHA is beginning and end of writing for main file
+C = '$ cat'
 M = 'main.py'
 
-# string to find a match to end writing a file
-END = 'guillaume@ubuntu:'
 
 # first line to write to your files
 firstline = '#!/usr/bin/python3\n'
@@ -79,11 +81,11 @@ def parsefile(intrapage_list):
             prototype = line[11:]
         else:
             prototype = ''
-        if C in line and M in line:
+        if ALPHA in line and C in line and M in line:
             f = extractname(line)
             fout = open(f, 'w')
             l += 1
-            while END not in intrapage_list[l]:
+            while ALPHA not in intrapage_list[l]:
                 line = intrapage_list[l]
                 fout.write(line)
                 l += 1
