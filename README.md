@@ -40,6 +40,11 @@ $ emacs intrapage.txt
 $ ./generate.py
 ```
 
+## To Do
+
+* Make script to create `./tests` directory
+* switch file creation method to use `.split(',')` instead of long-parse
+
 ## Author
 
 David John Coleman II.	Check out my website [davidjohncoleman.com](http://www.davidjohncoleman.com/)
