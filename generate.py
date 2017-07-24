@@ -29,9 +29,8 @@ def app():
 
 # initialize file as list
 def initialize():
-    fout = open(intrapage, 'r')
-    intrapage_list = fout.readlines()
-    fout.close()
+    with open(intrapage, mode='r', encoding='utf-8') as fout:
+        intrapage_list = fout.readlines()
     return intrapage_list
 
 
@@ -59,17 +58,15 @@ def writeyourfile(line, prototype):
         if line[i] == '\n':
             e1 = i
     f1 = line[s1:e1]
-    fout = open(f1, 'w')
-    writeline = firstline + prototype
-    fout.write(writeline)
-    fout.close()
+    with open(f1, mode='w', encoding='utf-8') as fout:
+        writeline = firstline + prototype
+        fout.write(writeline)
     os.chmod(f1, 500)
     if s2:
         f2 = line[s2:-1]
-        fout = open(f2, 'w')
-        writeline = '\n'
-        fout.write(writeline)
-        fout.close()
+        with open(f2, mode='w', encoding='utf-8') as fout:
+            writeline = '\n'
+            fout.write(writeline)
 
 
 # parses list of lines from file and writes to new files one at a time
@@ -83,13 +80,12 @@ def parsefile(intrapage_list):
             prototype = ''
         if ALPHA in line and C in line and M in line:
             f = extractname(line)
-            fout = open(f, 'w')
-            l += 1
-            while ALPHA not in intrapage_list[l]:
-                line = intrapage_list[l]
-                fout.write(line)
+            with open(f, mode='w', encoding='utf-8') as fout:
                 l += 1
-            fout.close()
+                while ALPHA not in intrapage_list[l]:
+                    line = intrapage_list[l]
+                    fout.write(line)
+                    l += 1
             os.chmod(f, 500)
         elif 'File:' in line:
             writeyourfile(line, prototype)
