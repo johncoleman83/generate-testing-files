@@ -34,6 +34,7 @@ def writeyourfile(prototypes):
             writeline = prototype
             fout.write(writeline)
 
+
 # parses list of lines from file and writes to new files one at a time
 def parsefile(intrapage_list):
     l = 0

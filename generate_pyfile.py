@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+THIS IS FOR GENERATING PYTHON FILES
+INCLUDING MAIN.PY FILES AND OTHER FILES THAT
+INCLUDE A PROTOTYPE
+"""
 import os
 
 
@@ -8,7 +13,7 @@ intrapage = 'intrapage.txt'
 
 # string to find a match to begin writing file and file extension
 
-ALPHA = 'guillaume@ubuntu:~/'
+ALPHA = 'wintermancer@lapbox ~/reddit_api/project $'
 
 # ALPHA is beginning and end of writing for main file
 C = '$ cat'
@@ -16,8 +21,7 @@ M = 'main.py'
 
 
 # first line to write to your files
-firstline = '#!/usr/bin/python3\n'
-
+firstline = '#!/usr/bin/python3\n"""\n'
 
 # main function
 def app():
@@ -34,7 +38,7 @@ def initialize():
     return intrapage_list
 
 
-#extracts filename from line from file
+# extracts filename from line from file
 def extractname(aline):
     s = aline.index(M)
     i = s
@@ -58,26 +62,31 @@ def writeyourfile(line, prototype):
         if line[i] == '\n':
             e1 = i
     f1 = line[s1:e1]
-    with open(f1, mode='w', encoding='utf-8') as fout:
-        writeline = firstline + prototype
-        fout.write(writeline)
-    os.chmod(f1, 500)
-    if s2:
-        f2 = line[s2:-1]
-        with open(f2, mode='w', encoding='utf-8') as fout:
-            writeline = '\n'
+    if not os.path.exists(f1):
+        with open(f1, mode='w', encoding='utf-8') as fout:
+            writeline = firstline + f1 + '\n"""\n' + prototype
             fout.write(writeline)
+        os.chmod(f1, 500)
+    if s2:
+        try:
+            i = line[s2:-1].index(',')
+            f2 = line[s2:i]
+        except:
+            f2 = line[s2:-1]
+        if not not os.path.exists(f2):
+            with open(f2, mode='w', encoding='utf-8') as fout:
+                writeline = '\n'
+                fout.write(writeline)
 
 
 # parses list of lines from file and writes to new files one at a time
 def parsefile(intrapage_list):
     l = 0
+    prototype = ''
     while l < len(intrapage_list):
         line = intrapage_list[l]
         if 'Prototype:' in line:
             prototype = line[11:]
-        else:
-            prototype = ''
         if ALPHA in line and C in line and M in line:
             f = extractname(line)
             with open(f, mode='w', encoding='utf-8') as fout:
@@ -90,7 +99,6 @@ def parsefile(intrapage_list):
         elif 'File:' in line:
             writeyourfile(line, prototype)
         l += 1
-
 
 
 if __name__ == '__main__':

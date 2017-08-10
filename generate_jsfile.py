@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-THIS IS FOR GENERATING SQL LANGUAGE FILES
-INCLUDING DUMP FILES
+THIS IS FOR GENERATING JavaScript FILES
+INCLUDING MAIN.JS FILES AND OTHER FILES THAT
+INCLUDE A PROTOTYPE
 """
 import os
 
@@ -16,12 +17,11 @@ ALPHA = 'guillaume@ubuntu:~/'
 
 # ALPHA is beginning and end of writing for main file
 C = '$ cat'
-M = '.sql'
+M = 'main.js'
 
 
 # first line to write to your files
-firstline = '#!/usr/bin/python3\n"""\n'
-
+firstline = '#!/usr/bin/node\n/* '
 
 # main function
 def app():
@@ -64,7 +64,7 @@ def writeyourfile(line, prototype):
     f1 = line[s1:e1]
     if not os.path.exists(f1):
         with open(f1, mode='w', encoding='utf-8') as fout:
-            writeline = firstline + f1 + '\n"""\n' + prototype
+            writeline = firstline + f1 + ' */\n' + prototype
             fout.write(writeline)
         os.chmod(f1, 500)
     if s2:
@@ -82,13 +82,12 @@ def writeyourfile(line, prototype):
 # parses list of lines from file and writes to new files one at a time
 def parsefile(intrapage_list):
     l = 0
+    prototype = ''
     while l < len(intrapage_list):
         line = intrapage_list[l]
         if 'Prototype:' in line:
             prototype = line[11:]
-        else:
-            prototype = ''
-        if ALPHA in line and C in line and M in line and '|' not in line:
+        if ALPHA in line and C in line and M in line:
             f = extractname(line)
             with open(f, mode='w', encoding='utf-8') as fout:
                 l += 1
