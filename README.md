@@ -1,9 +1,9 @@
 # generate testing files
 
-:a python application, to generate testing `main.` files & your code files with
-templates for Holberton School projects
+a python application, to generate testing `main.` files & your code files with
+templates for Holberton School projects.
 
-### python
+## Environment
 
   * __language:__ Python 3.6.10
   * __libraries:__ os
@@ -15,7 +15,9 @@ templates for Holberton School projects
 
 ```
 $ git clone https://github.com/johncoleman83/generate-testing-files.git
-$ mv generate-testing-files/generate.py . && touch intrapage.txt
+$ mv generate-testing-files/*.py .
+$ mv generate-testing-files/execute.sh .
+$ touch intrapage.txt
 $ rm -rf generate-testing-files/
 ```
 
@@ -23,6 +25,7 @@ $ rm -rf generate-testing-files/
   page that contains the testing `main.` files that you need
 * __save file__: create file, paste content from Holberton Intranet into the
   file. In my example, I save the file as: `intrapage.txt`
+* __Note:__: the file `intrapage.txt` in this repo is only an example
 
 ```
 $ emacs intrapage.txt
@@ -37,17 +40,20 @@ $ emacs intrapage.txt
 ## Usage
 
 ```
-$ ./generate.py
+$ ./execute.sh
 ```
+
+* Then select which tests you want to run based on the intranet page
 
 ## To Do
 
 * Make script to create `./tests` directory
 * switch file creation method to use `.split(',')` instead of long-parse
+* use beautifulsoup to parse intranet for me
 
 ## Author
 
-David John Coleman II.	Check out my website [davidjohncoleman.com](http://www.davidjohncoleman.com/)
+David John Coleman II, [davidjohncoleman.com](http://www.davidjohncoleman.com/)
 
 ## License
 
