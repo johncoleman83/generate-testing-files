@@ -25,6 +25,9 @@ firstline = '#!/usr/bin/python3\n"""\n'
 
 # main function
 def app():
+    """
+    Runs main programs
+    """
     intrapage_list = initialize()
     parsefile(intrapage_list)
     print('*******************', '** SWEET SUCCESS **', '*******************',
@@ -33,6 +36,11 @@ def app():
 
 # initialize file as list
 def initialize():
+    """
+    initializes intranet page as python object
+    due to authentication steps, this step simply
+    parses a file that was generated through copy and paste
+    """
     with open(intrapage, mode='r', encoding='utf-8') as fout:
         intrapage_list = fout.readlines()
     return intrapage_list
@@ -40,6 +48,9 @@ def initialize():
 
 # extracts filename from line from file
 def extractname(aline):
+    """
+    gets file name
+    """
     s = aline.index(M)
     i = s
     while aline[i] != ' ':
@@ -50,6 +61,9 @@ def extractname(aline):
 
 
 def writeyourfile(line, prototype):
+    """
+    writes the file expected for each task
+    """
     global firstline
     s1 = e1 = s2 = 0
     for i in range(len(line)):
@@ -79,8 +93,11 @@ def writeyourfile(line, prototype):
                 fout.write(writeline)
 
 
-# parses list of lines from file and writes to new files one at a time
 def parsefile(intrapage_list):
+    """
+    parses intranet page, writes main files, and calls the function
+    to write each file for each task
+    """
     l = 0
     while l < len(intrapage_list):
         line = intrapage_list[l]
@@ -103,4 +120,7 @@ def parsefile(intrapage_list):
 
 
 if __name__ == '__main__':
+    """
+    RUNS THE MAIN APP
+    """
     app()

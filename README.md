@@ -31,7 +31,7 @@ $ rm -rf generate-testing-files/
 $ emacs intrapage.txt
 ```
 
-* __read the code__: ensure that your configureations in `generate.py` are
+* __read the code__: ensure that your configurations in `generate.py` are
   correct.  If you followed the above instructions correctly, you should not
   have to do anything for this step, except understand the code.  You may need
   to change the string `END` depending on what user generated the testing files
@@ -47,6 +47,8 @@ $ ./execute.sh
 
 ## To Do
 
+* More Pythonic Parsing
+* Create one main app for any file type, instead of 5
 * Make script to create `./tests` directory
 * switch file creation method to use `.split(',')` instead of long-parse
 * use beautifulsoup to parse intranet for me

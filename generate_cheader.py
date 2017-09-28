@@ -11,8 +11,10 @@ import os
 intrapage = 'intrapage.txt'
 
 
-# main function
 def app():
+    """
+    Runs main programs
+    """
     intrapage_list = initialize()
     prototypes = parsefile(intrapage_list)
     writeyourfile(prototypes)
@@ -20,14 +22,21 @@ def app():
           sep='\n')
 
 
-# initialize file as list
 def initialize():
+    """
+    initializes intranet page as python object
+    due to authentication steps, this step simply
+    parses a file that was generated through copy and paste
+    """
     with open(intrapage, mode='r', encoding='utf-8') as fout:
         intrapage_list = fout.readlines()
     return intrapage_list
 
 
 def writeyourfile(prototypes):
+    """
+    writes the file expected for each task
+    """
     f1 = 'header.h'
     with open(f1, mode='w', encoding='utf-8') as fout:
         for prototype in prototypes:
@@ -35,8 +44,11 @@ def writeyourfile(prototypes):
             fout.write(writeline)
 
 
-# parses list of lines from file and writes to new files one at a time
 def parsefile(intrapage_list):
+    """
+    parses intranet page, writes main files, and calls the function
+    to write each file for each task
+    """
     l = 0
     prototypes = []
     while l < len(intrapage_list):
@@ -48,4 +60,7 @@ def parsefile(intrapage_list):
 
 
 if __name__ == '__main__':
+    """
+    RUNS THE MAIN APP
+    """
     app()
