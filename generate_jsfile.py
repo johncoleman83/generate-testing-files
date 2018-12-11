@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 THIS IS FOR GENERATING JavaScript FILES
 INCLUDING MAIN.JS FILES AND OTHER FILES THAT
@@ -21,7 +21,7 @@ M = 'main.js'
 
 
 # first line to write to your files
-firstline = '#!/usr/bin/node\n/* '
+firstline = '#!/usr/bin/env node\n/* '
 
 def app():
     """

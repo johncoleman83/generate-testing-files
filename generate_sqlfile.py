@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 THIS IS FOR GENERATING SQL LANGUAGE FILES
 INCLUDING DUMP FILES
@@ -20,7 +20,7 @@ M = '.sql'
 
 
 # first line to write to your files
-firstline = '#!/usr/bin/python3\n"""\n'
+firstline = '#!/usr/bin/env python3\n"""\n'
 
 
 # main function

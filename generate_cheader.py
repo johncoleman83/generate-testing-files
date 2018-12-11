@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 THIS IS FOR GENERATING A HEADER FILE
 IN C LANGUAGE

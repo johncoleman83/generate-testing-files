@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 THIS IS FOR GENERATING C LANGUAGE FILES
 INCLUDING MAIN.C FILES AND OTHER FILES THAT
