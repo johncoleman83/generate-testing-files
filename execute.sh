@@ -41,25 +41,25 @@ function begintest() {
 
 function init_selected_script() {
     case "$1" in
-            1)
-                begintest
-                ./generate_pyfile.py
-                ;;
-            2)
-                begintest
-                ./generate_sqlfile.py
-                ;;
-            3)
-                begintest
-                ./generate_cfile.py
-                ;;
-            4)
-                begintest
-                ./generate_cheader.py
-                ;;
-            *)
-                echo "...Goodbye"
-                [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
+        1)
+            begintest
+            ./generate_pyfile.py
+            ;;
+        2)
+            begintest
+            ./generate_sqlfile.py
+            ;;
+        3)
+            begintest
+            ./generate_cfile.py
+            ;;
+        4)
+            begintest
+            ./generate_cheader.py
+            ;;
+        *)
+            echo "...Goodbye"
+            [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
     esac
 }
 
@@ -77,12 +77,12 @@ function prompt_and_init_cleanup() {
     request_user_input
     local REPLY=$?
     case "$REPLY" in
-            1)
-                clean_up
-                ;;
-            *)
-                echo "...Goodbye"
-                [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
+        1)
+            clean_up
+            ;;
+        *)
+            echo "...Goodbye"
+            [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
     esac
 }
 
