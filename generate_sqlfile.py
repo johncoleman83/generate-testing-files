@@ -14,7 +14,7 @@ ALPHA = 'guillaume@ubuntu:~/'
 # ALPHA is beginning and end of writing for main file
 
 # other variables to find the text from the main file
-C = '$ cat'
+CAT = '$ cat'
 MAIN = '.sql'
 
 
@@ -67,7 +67,7 @@ def parsefile(intrapage_list):
             prototype = line[11:]
         else:
             prototype = ''
-        if ALPHA in line and C in line and MAIN in line and '|' not in line:
+        if ALPHA in line and CAT in line and MAIN in line and '|' not in line:
             f = extract_file_name(line, MAIN)
             with open(f, mode='w', encoding='utf-8') as fout:
                 l += 1

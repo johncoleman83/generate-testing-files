@@ -15,7 +15,7 @@ ALPHA = 'guillaume@ubuntu:~/'
 # ALPHA is beginning and end of writing for main file
 
 # other variables to find the text from the main file
-C = '$ cat'
+CAT = '$ cat'
 MAIN = 'main.js'
 
 
@@ -67,7 +67,7 @@ def parsefile(intrapage_list):
         line = intrapage_list[l]
         if 'Prototype:' in line:
             prototype = line[11:]
-        if ALPHA in line and C in line and MAIN in line:
+        if ALPHA in line and CAT in line and MAIN in line:
             f = extract_file_name(line, MAIN)
             with open(f, mode='w', encoding='utf-8') as fout:
                 l += 1
