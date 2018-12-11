@@ -1,10 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 THIS IS FOR GENERATING PYTHON FILES
 INCLUDING MAIN.PY FILES AND OTHER FILES THAT
 INCLUDE A PROTOTYPE
 """
 import os
+from shared.read_file import read_intranet_page
 
 
 # name of file containing copied text from intranet
@@ -13,38 +14,14 @@ intrapage = 'intrapage.txt'
 
 # string to find a match to begin writing file and file extension
 
-ALPHA = 'wintermancer@lapbox ~/reddit_api/project $'
+ALPHA = 'alexa@ubuntu-xenial:0x00-linear_algebra$'
 
 # ALPHA is beginning and end of writing for main file
 C = '$ cat'
 M = 'main.py'
 
-
 # first line to write to your files
-firstline = '#!/usr/bin/python3\n"""\n'
-
-# main function
-def app():
-    """
-    Runs main programs
-    """
-    intrapage_list = initialize()
-    parsefile(intrapage_list)
-    print('*******************', '** SWEET SUCCESS **', '*******************',
-          sep='\n')
-
-
-# initialize file as list
-def initialize():
-    """
-    initializes intranet page as python object
-    due to authentication steps, this step simply
-    parses a file that was generated through copy and paste
-    """
-    with open(intrapage, mode='r', encoding='utf-8') as fout:
-        intrapage_list = fout.readlines()
-    return intrapage_list
-
+firstline = '#!/usr/bin/env python3\n"""\n'
 
 # extracts filename from line from file
 def extractname(aline):
@@ -117,6 +94,15 @@ def parsefile(intrapage_list):
             writeyourfile(line, prototype)
         l += 1
 
+# main function
+def app():
+    """
+    Runs main programs
+    """
+    intrapage_list = read_intranet_page()
+    parsefile(intrapage_list)
+    print('*******************', '** SWEET SUCCESS **', '*******************',
+          sep='\n')
 
 if __name__ == '__main__':
     """
