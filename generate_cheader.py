@@ -5,11 +5,7 @@ IN C LANGUAGE
 """
 import os
 from shared.read_file import read_intranet_page
-
-
-# name of file containing copied text from intranet
-# generate this page manually with ctrl/command 'a', 'c', 'v')
-intrapage = 'intrapage.txt'
+from shared.output_messages import print_success
 
 
 def writeyourfile(prototypes):
@@ -45,8 +41,7 @@ def app():
     intrapage_list = read_intranet_page()
     prototypes = parsefile(intrapage_list)
     writeyourfile(prototypes)
-    print('*******************', '** SWEET SUCCESS **', '*******************',
-          sep='\n')
+    print_success()
 
 
 if __name__ == '__main__':

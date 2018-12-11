@@ -3,7 +3,6 @@
 THIS IS FOR READING INTRANET PAGE LIST
 """
 
-
 # name of file containing copied text from intranet
 # generate this page manually with ctrl/command 'a', 'c', 'v')
 intrapage = 'intrapage.txt'

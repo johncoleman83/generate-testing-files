@@ -6,11 +6,7 @@ INCLUDE A PROTOTYPE
 """
 import os
 from shared.read_file import read_intranet_page
-
-
-# name of file containing copied text from intranet
-# generate this page manually with ctrl/command 'a', 'c', 'v')
-intrapage = 'intrapage.txt'
+from shared.output_messages import print_success
 
 # string to find a match to begin writing file and file extension
 
@@ -102,8 +98,7 @@ def app():
     """
     intrapage_list = read_intranet_page()
     parsefile(intrapage_list)
-    print('*******************', '** SWEET SUCCESS **', '*******************',
-          sep='\n')
+    print_success()
 
 
 if __name__ == '__main__':

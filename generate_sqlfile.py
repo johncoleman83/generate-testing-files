@@ -5,11 +5,7 @@ INCLUDING DUMP FILES
 """
 import os
 from shared.read_file import read_intranet_page
-
-
-# name of file containing copied text from intranet
-# generate this page manually with ctrl/command 'a', 'c', 'v')
-intrapage = 'intrapage.txt'
+from shared.output_messages import print_success
 
 # string to find a match to begin writing file and file extension
 
@@ -22,17 +18,6 @@ M = '.sql'
 
 # first line to write to your files
 firstline = '#!/usr/bin/env python3\n"""\n'
-
-
-# main function
-def app():
-    """
-    Runs main programs
-    """
-    intrapage_list = read_intranet_page()
-    parsefile(intrapage_list)
-    print('*******************', '** SWEET SUCCESS **', '*******************',
-          sep='\n')
 
 
 # extracts filename from line from file
@@ -106,6 +91,16 @@ def parsefile(intrapage_list):
         elif 'File:' in line:
             writeyourfile(line, prototype)
         l += 1
+
+
+# main function
+def app():
+    """
+    Runs main programs
+    """
+    intrapage_list = read_intranet_page()
+    parsefile(intrapage_list)
+    print_success()
 
 
 if __name__ == '__main__':
