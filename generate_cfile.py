@@ -7,6 +7,7 @@ INCLUDE A PROTOTYPE
 import os
 from shared.read_file import read_intranet_page
 from shared.output_messages import print_success
+from shared.parser import extract_file_name
 
 
 # string to find a match to begin writing file and file extension
@@ -15,24 +16,11 @@ ALPHA = 'alex@/tmp/binary_trees$'
 
 # other variables to find the text from the main file
 C = '$ cat'
-M = 'main.c'
+MAIN = 'main.c'
 
 
 # first line to write to your files
 firstline = '#include "binary_trees.h"\n/**\n *\n */\n'
-
-
-def extractname(aline):
-    """
-    gets file name
-    """
-    s = aline.index(M)
-    i = s
-    while aline[i] != ' ':
-        i -= 1
-    i += 1
-    filename = aline[i:s] + M
-    return filename
 
 
 def writeyourfile(line, prototype):
@@ -71,8 +59,8 @@ def parsefile(intrapage_list):
         line = intrapage_list[l]
         if 'Prototype:' in line:
             prototype = line[11:]
-        if ALPHA in line and C in line and M in line:
-            f = extractname(line)
+        if ALPHA in line and C in line and MAIN in line:
+            f = extract_file_name(line, MAIN)
             with open(f, mode='w', encoding='utf-8') as fout:
                 l += 1
                 while ALPHA not in intrapage_list[l]:
