@@ -18,7 +18,6 @@ ALPHA = 'alex@/tmp/binary_trees$'
 CAT = '$ cat'
 MAIN = 'main.c'
 
-
 # first line to write to your files
 firstline = '#include "binary_trees.h"\n/**\n *\n */\n'
 

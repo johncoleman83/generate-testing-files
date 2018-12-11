@@ -35,7 +35,6 @@ function begintest() {
 }
 
 function init_selected_script() {
-    echo "$1"
     case "$1" in
             1)
                 begintest
@@ -59,11 +58,43 @@ function init_selected_script() {
     esac
 }
 
+function cleanup_output() {
+    echo -ne "\033[37m"
+    echo "Would you like to cleanup?"
+    echo -ne "\033[30m(1) YES"
+    echo -ne "(2) NO"
+    echo -e "\033[37m or anything else to quit"
+    echo -ne "\033[30m"
+}
+
+function prompt_and_init_cleanup() {
+    cleanup_output
+    request_user_input
+    local REPLY=$?
+    case "$REPLY" in
+            1)
+                clean_up
+                ;;
+            *)
+                echo "...Goodbye"
+                [[ "$0" = "$BASH_SOURCE" ]] && exit 1 || return 1
+    esac
+}
+
+function clean_up() {
+    rm -rf generate*
+    rm -rf shared
+    rm execute.sh
+    rm intrapage.txt
+    rm README.md
+}
+
 function main() {
     description_output
     request_user_input
     local REPLY=$?
     init_selected_script "$REPLY"
+    prompt_and_init_cleanup
 }
 
 # make sure script is not being sourced but instead executed
