@@ -15,14 +15,12 @@ templates for Holberton School projects.
 
 ```
 $ git clone https://github.com/johncoleman83/generate-testing-files.git
-$ mv generate-testing-files/*.py .
-$ mv generate-testing-files/execute.sh .
-$ touch intrapage.txt
-$ rm -rf generate-testing-files/
+$ mv generate-testing-files/* .
 ```
 
 * __manual parse__: manually copy and paste the entire contents from intranet
-  page that contains the testing `main.` files that you need
+  page that contains the testing `main.` files that you need. This is used as an alternative to requests module with beautiful soup to avoid having to go through
+  auth loops and avoid having to parse HTML tags
 * __save file__: create file, paste content from Holberton Intranet into the
   file. In my example, I save the file as: `intrapage.txt`
 * __Note:__: the file `intrapage.txt` in this repo is only an example
@@ -44,6 +42,9 @@ $ ./execute.sh
 ```
 
 * Then select which tests you want to run based on the intranet page
+
+* you can also cleanup all the testing files with the last option of
+  the execution script
 
 ## To Do
 
