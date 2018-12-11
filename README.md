@@ -11,7 +11,7 @@ templates for Holberton School projects.
 ## Configuration
 
 * __clone__: clone this repo in the directory you will work in
-* __move files__: move files into testing directory and delete repo
+* __move files__: move files into your working directory
 
 ```
 $ git clone https://github.com/johncoleman83/generate-testing-files.git
