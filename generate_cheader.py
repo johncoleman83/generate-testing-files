@@ -4,33 +4,12 @@ THIS IS FOR GENERATING A HEADER FILE
 IN C LANGUAGE
 """
 import os
+from shared.read_file import read_intranet_page
 
 
 # name of file containing copied text from intranet
 # generate this page manually with ctrl/command 'a', 'c', 'v')
 intrapage = 'intrapage.txt'
-
-
-def app():
-    """
-    Runs main programs
-    """
-    intrapage_list = initialize()
-    prototypes = parsefile(intrapage_list)
-    writeyourfile(prototypes)
-    print('*******************', '** SWEET SUCCESS **', '*******************',
-          sep='\n')
-
-
-def initialize():
-    """
-    initializes intranet page as python object
-    due to authentication steps, this step simply
-    parses a file that was generated through copy and paste
-    """
-    with open(intrapage, mode='r', encoding='utf-8') as fout:
-        intrapage_list = fout.readlines()
-    return intrapage_list
 
 
 def writeyourfile(prototypes):
@@ -57,6 +36,17 @@ def parsefile(intrapage_list):
             prototypes.append(line[11:])
         l += 1
     return prototypes
+
+
+def app():
+    """
+    Runs main programs
+    """
+    intrapage_list = read_intranet_page()
+    prototypes = parsefile(intrapage_list)
+    writeyourfile(prototypes)
+    print('*******************', '** SWEET SUCCESS **', '*******************',
+          sep='\n')
 
 
 if __name__ == '__main__':

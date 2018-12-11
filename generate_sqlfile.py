@@ -4,6 +4,7 @@ THIS IS FOR GENERATING SQL LANGUAGE FILES
 INCLUDING DUMP FILES
 """
 import os
+from shared.read_file import read_intranet_page
 
 
 # name of file containing copied text from intranet
@@ -28,22 +29,10 @@ def app():
     """
     Runs main programs
     """
-    intrapage_list = initialize()
+    intrapage_list = read_intranet_page()
     parsefile(intrapage_list)
     print('*******************', '** SWEET SUCCESS **', '*******************',
           sep='\n')
-
-
-# initialize file as list
-def initialize():
-    """
-    initializes intranet page as python object
-    due to authentication steps, this step simply
-    parses a file that was generated through copy and paste
-    """
-    with open(intrapage, mode='r', encoding='utf-8') as fout:
-        intrapage_list = fout.readlines()
-    return intrapage_list
 
 
 # extracts filename from line from file

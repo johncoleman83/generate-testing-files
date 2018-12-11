@@ -5,6 +5,7 @@ INCLUDING MAIN.JS FILES AND OTHER FILES THAT
 INCLUDE A PROTOTYPE
 """
 import os
+from shared.read_file import read_intranet_page
 
 
 # name of file containing copied text from intranet
@@ -22,26 +23,6 @@ M = 'main.js'
 
 # first line to write to your files
 firstline = '#!/usr/bin/env node\n/* '
-
-def app():
-    """
-    Runs main programs
-    """
-    intrapage_list = initialize()
-    parsefile(intrapage_list)
-    print('*******************', '** SWEET SUCCESS **', '*******************',
-          sep='\n')
-
-
-def initialize():
-    """
-    initializes intranet page as python object
-    due to authentication steps, this step simply
-    parses a file that was generated through copy and paste
-    """
-    with open(intrapage, mode='r', encoding='utf-8') as fout:
-        intrapage_list = fout.readlines()
-    return intrapage_list
 
 
 def extractname(aline):
@@ -113,6 +94,16 @@ def parsefile(intrapage_list):
         elif 'File:' in line:
             writeyourfile(line, prototype)
         l += 1
+
+
+def app():
+    """
+    Runs main programs
+    """
+    intrapage_list = read_intranet_page()
+    parsefile(intrapage_list)
+    print('*******************', '** SWEET SUCCESS **', '*******************',
+          sep='\n')
 
 
 if __name__ == '__main__':
