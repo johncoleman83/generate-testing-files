@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # executes tests based on file type
 
+RE='^[0-9]+$'
+
 function description_output() {
     echo -ne "\033[37m"
     echo "* *********************************************************** *"
@@ -26,6 +28,9 @@ function description_output() {
 function request_user_input() {
     read -p "Type your choice number or anything else to quit " -n 1 -r REPLY
     echo
+    if ! [[ $REPLY =~ $RE ]] ; then
+        echo "error: Not a number" >&2; exit 52
+    fi
     return "$REPLY"
 }
 
@@ -61,8 +66,8 @@ function init_selected_script() {
 function cleanup_output() {
     echo -ne "\033[37m"
     echo "Would you like to cleanup?"
-    echo -ne "\033[30m(1) YES"
-    echo -ne "(2) NO"
+    echo -e "\033[30m(1) YES"
+    echo -e "(2) NO"
     echo -e "\033[37m or anything else to quit"
     echo -ne "\033[30m"
 }
