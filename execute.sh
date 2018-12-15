@@ -34,27 +34,26 @@ function request_user_input() {
     return "$REPLY"
 }
 
-function begintest() {
-    echo "initializing tests..."
-    sleep 1
+function execution_confirmation_output() {
+    echo "executing file generation script..."
 }
 
 function init_selected_script() {
     case "$1" in
         1)
-            begintest
+            execution_confirmation_output
             ./generate_pyfile.py
             ;;
         2)
-            begintest
+            execution_confirmation_output
             ./generate_sqlfile.py
             ;;
         3)
-            begintest
+            execution_confirmation_output
             ./generate_cfile.py
             ;;
         4)
-            begintest
+            execution_confirmation_output
             ./generate_cheader.py
             ;;
         *)
