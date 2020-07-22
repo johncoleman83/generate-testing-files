@@ -1,7 +1,7 @@
 # generate testing files
 
 a python application, to generate testing `main.` files & your code files with
-templates for Holberton School projects.
+templates for Bootcamp School projects.
 
 ## Environment
 
@@ -21,7 +21,7 @@ $ mv generate-testing-files/* .
 * __manual parse__: manually copy and paste the entire contents from intranet
   page that contains the testing `main.` files that you need. This is used as an alternative to requests module with beautiful soup to avoid having to go through
   auth loops and avoid having to parse HTML tags
-* __save file__: create file, paste content from Holberton Intranet into the
+* __save file__: create file, paste content from Bootcamp Intranet into the
   file. In my example, I save the file as: `intrapage.txt`
 * __Note:__: the file `intrapage.txt` in this repo is only an example
 

@@ -1,5 +1,5 @@
 Toggle navigation
-Holberton School
+Bootcamp School
 You just released the optional tasks of this project. Have fun!
 0x04. Python - More Data Structures: Set, Dictionary
  Higher-level programming ― Python
@@ -78,7 +78,7 @@ guillaume@ubuntu:~/0x04$ ./0-main.py
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 0-square_matrix_simple.py
   Done?  
@@ -108,7 +108,7 @@ guillaume@ubuntu:~/0x04$ ./1-main.py
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 1-search_replace.py
   Done?  
@@ -132,7 +132,7 @@ Result: 15
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 2-uniq_add.py
   Done?  
@@ -157,7 +157,7 @@ guillaume@ubuntu:~/0x04$ ./3-main.py
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 3-common_elements.py
   Done?  
@@ -182,7 +182,7 @@ guillaume@ubuntu:~/0x04$ ./4-main.py
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 4-only_diff_elements.py
   Done?  
@@ -206,7 +206,7 @@ Number of keys: 3
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 5-number_keys.py
   Done?  
@@ -236,7 +236,7 @@ track: Low level
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 6-print_sorted_dictionary.py
   Done?  
@@ -292,7 +292,7 @@ track: Low level
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 7-update_dictionary.py
   Done?  
@@ -344,7 +344,7 @@ language: C
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 8-simple_delete.py
   Done?  
@@ -384,7 +384,7 @@ Molly: 32
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 9-multiply_by_2.py
   Done?  
@@ -414,7 +414,7 @@ Best score: None
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 10-best_score.py
   Done?  
@@ -446,7 +446,7 @@ guillaume@ubuntu:~/0x04$ ./11-main.py
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 11-mutiply_list_map.py
   Done?  
@@ -472,7 +472,7 @@ Average: 2.80
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 100-weight_average.py
   Done?  
@@ -512,7 +512,7 @@ guillaume@ubuntu:~/0x04$ ./101-main.py
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 101-square_matrix_map.py
   Done?  
@@ -560,7 +560,7 @@ track: Low
 guillaume@ubuntu:~/0x04$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 102-complex_delete.py
   Done?  
@@ -610,7 +610,7 @@ l = [b'Hello', b'World']
 lib.print_python_list(l)
 del l[1]
 lib.print_python_list(l)
-l = l + [4, 5, 6.0, (9, 8), [9, 8, 1024], b"Holberton", "Betty"]
+l = l + [4, 5, 6.0, (9, 8), [9, 8, 1024], b"Bootcamp", "Betty"]
 lib.print_python_list(l)
 l = []
 lib.print_python_list(l)
@@ -623,7 +623,7 @@ l.append(4)
 lib.print_python_list(l)
 l.pop()
 lib.print_python_list(l)
-l = ["Holberton"]
+l = ["Bootcamp"]
 lib.print_python_list(l)
 lib.print_python_bytes(l);
 julien@ubuntu:~/CPython$ python3 103-tests.py 
@@ -676,7 +676,7 @@ Element 5: list
 Element 6: bytes
 [.] bytes object info
   size: 9
-  trying string: Holberton
+  trying string: Bootcamp
   first 10 bytes: 48 6f 6c 62 65 72 74 6f 6e 00
 Element 7: str
 [*] Python list info
@@ -710,6 +710,6 @@ Element 0: str
 julien@ubuntu:~/CPython$ 
 Repo:
 
-GitHub repository: holbertonschool-higher_level_programming
+GitHub repository: bootcampschool-higher_level_programming
 Directory: 0x04-python-more_data_structures
 File: 103-python.c
