@@ -17,7 +17,7 @@ You just released the optional tasks of this project. Have fun!
 0x00. Linear Algebra
  Year 2 - Machine Learning ― Math
 
- by Alexa Orrico, Software Engineer at Bootcamp School
+ by Alexa Orrico, Software Engineer at a software development program
 
  weight: 1
 
@@ -831,4 +831,4 @@ Repo:
 GitHub repository: bootcampschool-machine_learning
 Directory: math/0x00-linear_algebra
 File: 102-squashed_like_sardines.py
-Copyright © 2018 Bootcamp School. All rights reserved.
+Copyright © 2018 a software development program. All rights reserved.

@@ -1,5 +1,5 @@
 Toggle navigation
-Bootcamp School
+a software development program
 You just released the optional tasks of this project. Have fun!
 0x04. Python - More Data Structures: Set, Dictionary
  Higher-level programming ― Python

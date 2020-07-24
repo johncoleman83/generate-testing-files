@@ -1,7 +1,7 @@
 # generate testing files
 
 a python application, to generate testing `main.` files & your code files with
-templates for Bootcamp School projects.
+templates for a software development program projects.
 
 ## Environment
 
